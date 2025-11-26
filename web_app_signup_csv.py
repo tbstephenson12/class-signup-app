@@ -107,8 +107,9 @@ note1 = '''
         your details.
         '''
 note2 = '''
-        **Note 2**: If you need to delete your entry: **(1)** check the box 
-        next to that line **(2)** click the trash icon.
+        **Note 2**: If you need to delete your entry: **(1)** check the box/
+        empty square next to your entry **(2)** click the trash icon that appears
+        at the top-right of the table of responses.
         '''
 st.markdown(note1)
 st.markdown(note2)
