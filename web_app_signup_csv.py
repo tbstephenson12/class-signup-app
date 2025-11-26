@@ -19,7 +19,7 @@ st.set_page_config(
     page_title='First Love Activity Sign-up',
 )
 
-st.image('first_love_logo.png', width='stretch')
+st.image('first_love_logo.png', use_container_width=True)
 
 def read_data_temp(filename):
     df = pd.read_csv(filename)
@@ -102,18 +102,22 @@ with st.sidebar:
 
 # display data in the main window
 st.markdown('## All responses')
-bullets = '''
-            **Note**: If you need to delete your entry:  
-            - check the box next to that line  
-            - click the trash icon
-            '''
-st.markdown(bullets)
+note1 = '''
+        **Note 1**: If you're on mobile, tap the ">>" in the top left to enter 
+        your details.
+        '''
+note2 = '''
+        **Note 2**: If you need to delete your entry: **(1)** check the box 
+        next to that line **(2)** click the trash icon.
+        '''
+st.markdown(note1)
+st.markdown(note2)
 editor_df = st.data_editor(
     st.session_state.data, 
     key='signup-editor', 
     on_change=save_data(SHEET_FILENAME), 
     num_rows='dynamic',
-    width='stretch')
+    use_container_width=True)
 st.session_state.data = editor_df
 
 st.session_state.data.to_csv(SHEET_FILENAME)
