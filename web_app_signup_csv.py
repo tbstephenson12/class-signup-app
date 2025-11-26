@@ -19,6 +19,8 @@ st.set_page_config(
     page_title='First Love Activity Sign-up',
 )
 
+st.image('first_love_logo.png', use_container_width=True)
+
 def read_data_temp(filename):
     df = pd.read_csv(filename)
     print(f'Imported dataframe: {df.shape}')
@@ -111,7 +113,7 @@ editor_df = st.data_editor(
     key='signup-editor', 
     on_change=save_data(SHEET_FILENAME), 
     num_rows='dynamic',
-    use_container_width=True)
+    width='stretch')
 st.session_state.data = editor_df
 
 st.session_state.data.to_csv(SHEET_FILENAME)
