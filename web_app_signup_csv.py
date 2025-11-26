@@ -19,7 +19,7 @@ st.set_page_config(
     page_title='First Love Activity Sign-up',
 )
 
-st.image('first_love_logo.png', use_container_width=True)
+st.image('first_love_logo.png', width='stretch')
 
 def read_data_temp(filename):
     df = pd.read_csv(filename)
